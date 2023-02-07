@@ -1,19 +1,20 @@
-from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton, CallbackQuery
-from loader import dp
+from aiogram.types import Message, ReplyKeyboardMarkup
+from loader import dp, db
 from filters import IsUser, IsAdmin
 
-catalog = 'Каталог'
-get_order = 'Заказать работу'
+catalog = '📖 Каталог'
+get_order = '🏹 Заказать работу'
+cart = '🛒 Корзина'
 
-settings = 'Настройка каталога'
-orders = 'Заказы'
-questions = 'Вопросы'
+settings = '🔧 Настройка каталога'
+orders = '🚚 Заказы'
+questions = '❓ Вопросы'
 
 
 @dp.message_handler(IsUser(), commands='menu')
 async def menu_user(message: Message):
     user_buttons = ReplyKeyboardMarkup(selective=True)
-    user_buttons.add(catalog, get_order)
+    user_buttons.add(catalog, cart, get_order)
 
     await message.answer('Меню', reply_markup=user_buttons)
 
