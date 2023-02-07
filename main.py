@@ -3,7 +3,7 @@ import handlers
 import filters
 from aiogram import types, executor
 from aiogram.types import Message, ReplyKeyboardMarkup, ReplyKeyboardRemove
-from loader import dp, bot
+from loader import dp, bot, db
 from settings import settings
 # from settings import settings
 # from keyboards import markups
@@ -58,11 +58,15 @@ async def admin_mode(message: Message):
     
 async def on_startup(dp):
     logging.basicConfig(level=logging.INFO)
+    db.create_tables()
 
 
 async def on_shutdown():
+    await dp.storage.close()
+    await dp.storage.wait_closed()
     logging.warning("Bot down")
 
 
 if __name__ == '__main__':
-    executor.start_polling(dp, on_startup=on_startup)
+
+    executor.start_polling(dp, on_startup=on_startup, skip_updates=False)
