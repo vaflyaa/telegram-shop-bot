@@ -40,6 +40,7 @@ Temporary Items
 **/__pycache__/
 *.py[cod]
 *$py.class
+tg_shop_database.db
 
 
 # Enviroments
@@ -52,5 +53,5 @@ env.bak/
 venv.bak/
 
 # token
-token.txt
-
+input.txt
+input.py
