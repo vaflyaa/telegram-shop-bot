@@ -1,7 +1,7 @@
 from aiogram.dispatcher import FSMContext
-from aiogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton, ContentType, ReplyKeyboardMarkup, ReplyKeyboardRemove
+from aiogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardRemove
 from aiogram.utils.callback_data import CallbackData
-from states.ProductState import ProductState, CategoryState
+from states.product_state import ProductState, CategoryState
 from aiogram.types.chat import ChatActions
 from handlers.menu import settings
 from loader import dp, db, bot
@@ -43,6 +43,7 @@ async def category_callback_handler(query: CallbackQuery, callback_data: dict, s
     await state.update_data(category_index=category_idx)
     await show_products(query.message, products, category_idx)
 
+
 # add_category
 
 @dp.callback_query_handler(IsAdmin(), text='add_category')
@@ -61,6 +62,7 @@ async def set_category_title_handler(message: Message, state: FSMContext):
 
     await state.finish()
     await main_settings(message)
+
 
 # delete_category
 
