@@ -1,7 +1,6 @@
 from aiogram.types import Message, CallbackQuery
 from keyboards.categories import categories_markup, category_cb
 from keyboards.products_from_catalog import product_markup, product_cb
-from aiogram.utils.callback_data import CallbackData
 from aiogram.types.chat import ChatActions
 from filters import IsUser
 from loader import dp, db, bot
