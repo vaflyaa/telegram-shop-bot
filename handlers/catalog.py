@@ -46,11 +46,11 @@ async def show_products(m, products):
 
         await bot.send_chat_action(m.chat.id, ChatActions.TYPING)
 
-        for idx, title, descr, image, price, _ in products:
+        for idx, _, title, descr, image, price, in products:
 
             markup = product_markup(idx, price)
             text = f'<b>{title}</b>\n\n{descr}'
 
-            await m.answer(f'{text}', reply_markup=markup)
+            await m.answer(text, reply_markup=markup)
 
 
