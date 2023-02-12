@@ -50,6 +50,6 @@ async def show_products(m, products):
             markup = product_markup(idx, price)
             text = f'<b>{title}</b>\n\n{descr}'
 
-            await m.answer(text, reply_markup=markup)
+            await m.answer_photo(photo=image, caption=text, reply_markup=markup)
 
 
