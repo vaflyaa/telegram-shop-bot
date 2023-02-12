@@ -62,7 +62,7 @@ async def send_answer(message: Message, state: FSMContext):
         answer = data['answer']
         chat_id = data['chat_id']
 
-        question = db.fetchone('SELECT question FROM questions WHERE chat_id=?', (chat_id,))
+        question = db.fetchone('SELECT question FROM questions WHERE chat_id=?', (chat_id,))[0]
         db.query('DELETE FROM questions WHERE chat_id=?', (chat_id,))
 
         text = f'Вопрос: <b>{question}</b>\n\nОтвет: <b>{answer}</b>'
