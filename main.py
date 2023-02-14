@@ -5,13 +5,13 @@ from aiogram import types, executor
 from aiogram.types import Message, ReplyKeyboardMarkup, ReplyKeyboardRemove
 from loader import dp, bot, db
 from settings import settings
-# from settings import settings
-# from keyboards import markups
+
 
 user_message = 'Пользователь'
 admin_message = 'Админ'
 
 filters.setup(dp)
+
 
 @dp.message_handler(commands='start')
 async def start_handler(message: Message):
@@ -35,7 +35,7 @@ async def user_mode(message: Message):
 
 /menu - чтобы перейти в каталог и выбрать товар.
 
-/info - получить информацию о нашей мастерской.
+/info - получить информацию о нашем магазине.
 
 /help - поможет связаться с админами, если есть вопросы.''', reply_markup=ReplyKeyboardRemove())
 
