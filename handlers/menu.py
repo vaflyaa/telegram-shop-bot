@@ -3,7 +3,7 @@ from loader import dp, db
 from filters import IsUser, IsAdmin
 
 catalog = '📖 Каталог'
-get_order = '🏹 Заказать работу'
+order_status = '🚚 Статус заказа'
 cart = '🛒 Корзина'
 
 settings = '🔧 Настройка каталога'
@@ -14,7 +14,7 @@ questions = '❓ Вопросы'
 @dp.message_handler(IsUser(), commands='menu')
 async def menu_user(message: Message):
     user_buttons = ReplyKeyboardMarkup(resize_keyboard=True, selective=True)
-    user_buttons.add(catalog, cart, get_order)
+    user_buttons.add(catalog, cart, order_status)
 
     await message.answer('Меню', reply_markup=user_buttons)
 
