@@ -28,7 +28,7 @@ async def show_cart(message: Message, state: FSMContext):
             product = db.fetchone('SELECT * FROM products WHERE idx=?', (idx,))
 
             if product is None:
-                db.query('DELETE FROM cart WHERE idx=?', (idx,))
+                db.query('DELETE FROM cart WHERE idx=?', (idx, product))
             else:
                 _, _, title, descr, image, price = product
                 order_cost += price
