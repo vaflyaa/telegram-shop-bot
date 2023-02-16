@@ -45,7 +45,7 @@ async def submit_answer(message: Message, state: FSMContext):
         data['answer'] = message.text
 
     await AnswerState.next()
-    await message.answer('Убедитесь, что все верно.', reply_markup=submit_markup())
+    await message.answer('Убедитесь, что все верно. ngfjhgfjgk', reply_markup=submit_markup())
 
 
 @dp.message_handler(IsAdmin(), text=cancel_message, state=AnswerState.submit)
