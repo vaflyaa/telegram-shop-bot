@@ -16,7 +16,7 @@ async def show_cart(message: Message, state: FSMContext):
     cart_data = db.fetchall('SELECT * FROM cart WHERE chat_id=?', (message.chat.id,))
 
     if len(cart_data) == 0:
-        await message.answer('Ваша корзина пуста.')
+        await message.answer('Ваша пуста.')
     else:
         await bot.send_chat_action(message.chat.id, ChatActions.TYPING)
         async with state.proxy() as data:
