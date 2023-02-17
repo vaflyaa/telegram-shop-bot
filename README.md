@@ -6,22 +6,24 @@
 - ```/help``` – to ask questions for admins.
 
 ## Menu
+
 ### User's menu:
-
-
-### Admin's menu:
-
+![](screenshots/user's%20menu.png)
 
 ### Catalog:
-
-
-
+![](screenshots/catalog.png)
 
 ### Cart:
-
+![](screenshots/cart.png)
 
 ### /help:
+![](screenshots/help.png)
 
+### Admin's menu:
+![](screenshots/admin's%20menu.png)
+
+### Admin's settings:
+![](screenshots/product%20add.png)
 
 ## How to use:
 
